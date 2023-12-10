@@ -97,6 +97,7 @@
     <module>coverage-report</module>
     <module>examples</module>
     <module>docs</module>
+    <module>atlasmaptester</module>
   </modules>
 
   <repositories>
