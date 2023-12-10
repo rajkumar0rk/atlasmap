@@ -63,6 +63,8 @@ public abstract class XmlFieldTransformer {
                         }
                     }
                 }
+            }else{
+                namespaces.put(node.getNodeValue(), node.getLocalName());
             }
         }
     }
