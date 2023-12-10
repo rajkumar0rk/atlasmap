@@ -96,7 +96,6 @@
     <module>mock-embedded</module>
     <module>coverage-report</module>
     <module>examples</module>
-    <module>docs</module>
   </modules>
 
   <repositories>

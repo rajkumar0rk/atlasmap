@@ -134,6 +134,139 @@ export class DocumentManagementService {
         .post(request.url, request.options)
         .json()
         .then((responseJson: any) => {
+// if(responseJson&&responseJson.XmlInspectionResponse&&responseJson.XmlInspectionResponse.xmlDocument.fields.field[0].name==="EfxReceive"){
+// responseJson.XmlInspectionResponse.xmlDocument={
+//   "jsonType": "io.atlasmap.xml.v2.XmlDocument",
+//   "fields": {
+//       "field": [
+//           {
+//               "jsonType": "io.atlasmap.xml.v2.XmlComplexType",
+//               "path": "/EfxReceive",
+//               "fieldType": "COMPLEX",
+//               "name": "EfxReceive",
+//               "attribute": false,
+//               "xmlFields": {
+//                   "xmlField": [
+//                       {
+//                           "jsonType": "io.atlasmap.xml.v2.XmlField",
+//                           "value": "484IG00144",
+//                           "path": "/EfxReceive/@customerNumber",
+//                           "status": "SUPPORTED",
+//                           "fieldType": "STRING",
+//                           "name": "customerNumber",
+//                           "attribute": true
+//                       },
+//                       {
+//                           "jsonType": "io.atlasmap.xml.v2.XmlField",
+//                           "value": "U86",
+//                           "path": "/EfxReceive/@securityCode",
+//                           "status": "SUPPORTED",
+//                           "fieldType": "STRING",
+//                           "name": "securityCode",
+//                           "attribute": true
+//                       },
+//                       {
+//                           "jsonType": "io.atlasmap.xml.v2.XmlField",
+//                           "value": "XDIA",
+//                           "path": "/EfxReceive/@tranID",
+//                           "status": "SUPPORTED",
+//                           "fieldType": "STRING",
+//                           "name": "tranID",
+//                           "attribute": true
+//                       },
+//                       {
+//                           "jsonType": "io.atlasmap.xml.v2.XmlField",
+//                           "value": "6.0",
+//                           "path": "/EfxReceive/@version",
+//                           "status": "SUPPORTED",
+//                           "fieldType": "STRING",
+//                           "name": "version",
+//                           "attribute": true
+//                       },
+//                       {
+//                           "jsonType": "io.atlasmap.xml.v2.XmlField",
+//                           "value": "abc",
+//                           "path": "/EfxReceive/@id",
+//                           "status": "SUPPORTED",
+//                           "fieldType": "STRING",
+//                           "name": "id",
+//                           "attribute": true
+//                       },
+//                       {
+//                           "jsonType": "io.atlasmap.xml.v2.XmlComplexType",
+//                           "collectionType": "NONE",
+//                           "path": "/EfxReceive/CustomerInfo",
+//                           "fieldType": "COMPLEX",
+//                           "name": "CustomerInfo",
+//                           "attribute": false,
+//                           "xmlFields": {
+//                               "xmlField": [
+//                                   {
+//                                       "jsonType": "io.atlasmap.xml.v2.XmlField",
+//                                       "value": "abc",
+//                                       "path": "/EfxReceive/CustomerInfo/@id",
+//                                       "status": "SUPPORTED",
+//                                       "fieldType": "STRING",
+//                                       "name": "id",
+//                                       "attribute": true
+//                                   },
+//                                   {
+//                                       "jsonType": "io.atlasmap.xml.v2.XmlField",
+//                                       "value": "484IG00144",
+//                                       "path": "/EfxReceive/CustomerInfo/CustomerNumber",
+//                                       "status": "SUPPORTED",
+//                                       "fieldType": "COMPLEX",
+//                                       "name": "CustomerNumber",
+//                                       "attribute": false,
+//                                       "xmlFields": {
+//                                         "xmlField": [
+//                                           {
+//                                             "jsonType": "io.atlasmap.xml.v2.XmlField",
+//                                             "value": "U86",
+//                                             "path": "/EfxReceive/CustomerInfo/SecurityCode",
+//                                             "status": "SUPPORTED",
+//                                             "fieldType": "STRING",
+//                                             "name": "SecurityCode",
+//                                             "attribute": false
+//                                         },
+//                                         ]
+//                                       }
+//                                   },
+//                                   {
+//                                       "jsonType": "io.atlasmap.xml.v2.XmlField",
+//                                       "value": "U86",
+//                                       "path": "/EfxReceive/CustomerInfo/SecurityCode",
+//                                       "status": "SUPPORTED",
+//                                       "fieldType": "STRING",
+//                                       "name": "SecurityCode",
+//                                       "attribute": false
+//                                   },
+//                                   {
+//                                       "jsonType": "io.atlasmap.xml.v2.XmlField",
+//                                       "value": "1",
+//                                       "path": "/EfxReceive/CustomerInfo/MultipleFileIndicator",
+//                                       "status": "SUPPORTED",
+//                                       "fieldType": "STRING",
+//                                       "name": "MultipleFileIndicator",
+//                                       "attribute": false
+//                                   }
+//                               ]
+//                           }
+//                       }
+//                   ]
+//               }
+//           }
+//       ]
+//   },
+//   "xmlNamespaces": {
+//       "xmlNamespace": [
+//           {
+//               "uri": "http://xml.equifax.com/XMLSchema"
+//           }
+//       ]
+//   }
+// }
+// }
           this.cfg.logger!.debug(
             `Document Inspection Response: ${JSON.stringify(responseJson)}`
           );

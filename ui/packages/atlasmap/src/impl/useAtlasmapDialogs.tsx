@@ -177,6 +177,16 @@ export function useAtlasmapDialogs({
   );
   //#endregion
 
+  const myTesting=(s:any)=>{
+    console.log("222",s)
+      console.log("rajkumarss",configModel.getAllDocs())
+    const testing:any={
+      "exportMappings":{"value":"\"{\\\"AtlasMapping\\\":{\\\"jsonType\\\":\\\"io.atlasmap.v2.AtlasMapping\\\",\\\"dataSource\\\":[{\\\"jsonType\\\":\\\"io.atlasmap.xml.v2.XmlDataSource\\\",\\\"id\\\":\\\"equifax_requestMin-9e507bd2-d09b-4e46-9d49-1ac79a03784c\\\",\\\"name\\\":\\\"equifax_requestMin\\\",\\\"description\\\":\\\"Source document equifax_requestMin type: XML\\\",\\\"uri\\\":\\\"atlas:xml:equifax_requestMin-9e507bd2-d09b-4e46-9d49-1ac79a03784c\\\",\\\"dataSourceType\\\":\\\"SOURCE\\\",\\\"xmlNamespaces\\\":{\\\"xmlNamespace\\\":[{\\\"uri\\\":\\\"http://xml.equifax.com/XMLSchema\\\"}]}}],\\\"mappings\\\":{\\\"mapping\\\":[]},\\\"lookupTables\\\":{\\\"lookupTable\\\":[]},\\\"constants\\\":{\\\"constant\\\":[{\\\"name\\\":\\\"css\\\",\\\"value\\\":\\\"cds\\\",\\\"fieldType\\\":\\\"STRING\\\"},{\\\"name\\\":\\\"das\\\",\\\"value\\\":\\\"sacd\\\",\\\"fieldType\\\":\\\"DATE_TZ\\\"},{\\\"name\\\":\\\"wefef\\\",\\\"value\\\":\\\"fwdw\\\",\\\"fieldType\\\":\\\"STRING\\\"}]},\\\"properties\\\":{\\\"property\\\":[]},\\\"name\\\":\\\"UI.0\\\",\\\"version\\\":\\\"2.6.0-SNAPSHOT\\\"}}\""},
+    "exportMeta":[{"name":"equifax_requestMin","dataSourceType":"XML","id":"equifax_requestMin-9e507bd2-d09b-4e46-9d49-1ac79a03784c","inspectionType":"INSTANCE","inspectionParameters":{"":""},"isSource":true}],
+    "exportBlockData":[{"value":"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\r\n<EfxReceive customerNumber=\"484IG00144\" securityCode=\"U86\" tranID=\"XDIA\" version=\"6.0\" xmlns=\"http://xml.equifax.com/XMLSchema\">\r\n\t<CustomerInfo id=\"abc\">\r\n\t\t<CustomerNumber id=\"123\">484IG00144</CustomerNumber>\r\n\t\t<SecurityCode id=\"234\">U86</SecurityCode>\r\n\t\t<Raj id=\"123\">kkk</Raj>\r\n\t\t<MultipleFileIndicator>1</MultipleFileIndicator>\r\n\t</CustomerInfo>\r\n</EfxReceive>"}]
+}
+      configModel.fileService.setMappingDigestToService(testing)
+  }
   //#region namespace table dialogs
   const [createNamespaceDialog, openCreateNamespaceDialog] =
     useNamespaceDialog('Create namespace');
@@ -383,6 +393,7 @@ export function useAtlasmapDialogs({
       onToggleExpressionMode,
       onEditMappingEnumeration,
       onEditCSVParams,
+      myTesting
     },
     dialogs: portal,
   };

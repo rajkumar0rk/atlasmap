@@ -255,6 +255,7 @@ export class InitializationService {
    * @param mappingDigest - {@link ADMDigest} mapping digest
    */
   private initializeWithMappingDigest(): Promise<boolean> {
+    console.log("rajkumar",this.cfg)
     return new Promise<boolean>((resolve) => {
       this.cfg.fileService
         .getCurrentMappingDigest()

@@ -97,6 +97,7 @@ export class FileManagementService {
    * Retrieve the current user data mappings digest file from the server as a GZIP compressed byte array buffer.
    */
   getCurrentMappingDigest(): Promise<ADMDigest | null> {
+    console.log("rajjj",this)
     return new Promise<ADMDigest | null>((resolve, reject) => {
       this.getCurrentFile(FileName.DIGEST, FileType.DIGEST)
         .then((gzipped) => {
@@ -316,7 +317,7 @@ export class FileManagementService {
         return;
       }
       // Update .../target/mappings/adm-catalog-files.gz
-      const url = this.cfg.initCfg.baseMappingServiceUrl + 'mapping/GZ/0';
+      const url = this.cfg.initCfg.baseMappingServiceUrl + 'mapping/GZ';
       const fileContent: Blob = new Blob([compressedBuffer], {
         type: 'application/octet-stream',
       });

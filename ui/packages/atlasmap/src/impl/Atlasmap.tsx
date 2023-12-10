@@ -200,6 +200,7 @@ export const Atlasmap: FunctionComponent<IAtlasmapProps> = ({
         );
       },
       onDeleteProperty: handlers.onDeleteProperty,
+      myTesting:handlers.myTesting,
       onDeleteDocument: allowDelete
         ? (id) => handlers.onDeleteDocument(id, true)
         : undefined,
@@ -280,6 +281,7 @@ export const Atlasmap: FunctionComponent<IAtlasmapProps> = ({
         );
       },
       onDeleteProperty: handlers.onDeleteProperty,
+      myTesting:handlers.myTesting,
       onDeleteDocument: allowDelete
         ? (id) => handlers.onDeleteDocument(id, false)
         : undefined,

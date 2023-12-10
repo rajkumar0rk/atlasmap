@@ -55,6 +55,7 @@ import { DocumentType } from '@atlasmap/core';
 import { PlusIcon } from '@patternfly/react-icons';
 import { TraverseFields } from './TraverseFields';
 import { commonActions } from './commonActions';
+// import { useAtlasmap } from '../../../impl/AtlasmapProvider';
 
 export interface ISourceColumnCallbacks
   extends IConstantsTreeCallbacks,
@@ -83,6 +84,7 @@ export interface ISourceColumnCallbacks
   onFieldPreviewChange: (field: IAtlasmapField, value: string) => void;
   canAddToSelectedMapping: (isSource: boolean) => boolean;
   onEditCSVParams: (id: string, isSource: boolean) => void;
+  myTesting: (s:any) => void;
 }
 
 export interface ISourcesColumnData {
@@ -126,6 +128,7 @@ export const SourcesColumn: FunctionComponent<
   constants,
   sources,
   showTypes,
+  myTesting
 }) => {
   const renderPreview = useCallback(
     (field: IAtlasmapField) =>
@@ -138,7 +141,7 @@ export const SourcesColumn: FunctionComponent<
       ),
     [onFieldPreviewChange, shouldShowMappingPreviewForField],
   );
-
+  // const { configModel, importInstanceSchema } = useAtlasmap();
   return (
     <>
       <SearchableColumnHeader
@@ -347,6 +350,26 @@ export const SourcesColumn: FunctionComponent<
                                   key={'delete-document'}
                                 />
                               ),
+                              ,
+                              <Tooltip
+                              position={'top'}
+                              enableFlip={true}
+                              content={
+                                <div>Create a source property for use in mapping</div>
+                              }
+                              key={'create-property'}
+                              entryDelay={750}
+                              exitDelay={100}
+                            >
+                              <Button
+                                onClick={() => myTesting(s)}
+                                variant={'plain'}
+                                aria-label="Create a source property for use in mapping"
+                                data-testid="create-source-property-button"
+                              >
+                                <PlusIcon />
+                              </Button>
+                            </Tooltip>
                             ]
                       }
                       noPadding={true}
