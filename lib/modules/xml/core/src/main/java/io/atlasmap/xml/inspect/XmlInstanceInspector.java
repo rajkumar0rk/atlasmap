@@ -130,19 +130,39 @@ public class XmlInstanceInspector {
         }
         for (int i = 0; i < childNodes.getLength(); i++) {
             Node e = childNodes.item(i);
-            if (e.getNodeType() != Node.ELEMENT_NODE) {
-                continue;
-            }
+//            if (e.getNodeType() != Node.ELEMENT_NODE) {
+//                continue;
+//            }
             // do we have child elements?
-            NodeList childElements = ((Element) e).getElementsByTagName("*");
-            if (childElements.getLength() > 0) {
-                mapParentNode(e, childParent);
-            } else {
-                mapNodeToXmlField(e, childParent);
-                if (e.hasAttributes()) {
-                    mapAttributes(e, childParent);
-                }
+            if (e.hasAttributes()) {
+                mapAttributes(e, childParent);
             }
+            if (e.getNodeType() == Node.ELEMENT_NODE) {
+                mapParentNode((Node) e.getChildNodes(), childParent);
+            } else {
+              mapNodeToXmlField(e, childParent);
+          }
+//            if (((Element) e).getElementsByTagName("*").getLength() > 0) {
+//                mapParentNode(e, childParent);
+//            } else {
+//                mapNodeToXmlField(e, childParent);
+//            }
+//            NodeList test=e.getChildNodes();
+//            if (test.getNodeType() == Node.TEXT_NODE) {
+//              mapNodeToXmlField( e, childParent);;
+//            }
+//            
+           
+           
+//            NodeList childElements = ((Element) e).getElementsByTagName("*");
+//            if (childElements.getLength() > 0) {
+//                mapParentNode(e, childParent);
+//            } else {
+//                mapNodeToXmlField(e, childParent);
+//                if (e.hasAttributes()) {
+//                    mapAttributes(e, childParent);
+//                }
+//            }
         }
         if (node.getNamespaceURI() != null) {
             mapNamespace(node);
